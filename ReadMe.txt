@@ -3,7 +3,7 @@ Dans "tools.h" et "tools.cpp", il y a des fonctions qui permettent de refaire un
 
 Il y a un apprentissage fourni, fait au préalable par l'auteur du code.
 
-J'ai apporté qq modif au code juste pour le faire fonctionner en ligne de commandes et réduire les images quand c'est necessaire.
+J'ai apporté quelques modifications au code juste pour le faire fonctionner en ligne de commandes et réduire les images quand c'est necessaire.
 
 Pour lancer le soft :
 vehicle_Detection.exe video fichierSVM
