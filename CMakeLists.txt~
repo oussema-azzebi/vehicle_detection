@@ -1,0 +1,24 @@
+cmake_minimum_required (VERSION 2.6)
+
+project(vehicle_detection)
+
+#automaticaly find opencv packages: includes and libs
+set(OpenCV_DIR "C:/OpenCV/OpenCV 3.2.0/build")
+find_package(OpenCV REQUIRED)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+set_property(GLOBAL PROPERTY CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} -Wall)
+set_property(GLOBAL PROPERTY CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} -O3)
+
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/inc)
+include_directories(${OpenCV_INCLUDE_DIRS})
+
+file(GLOB HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/inc/*.h)
+file(GLOB CPP_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
+add_executable(${PROJECT_NAME} ${CPP_FILES} ${HEADERS})
+target_link_libraries(${PROJECT_NAME} LINK_PUBLIC ${OpenCV_LIBS})
+												   
+#install directory
+install (TARGETS ${PROJECT_NAME} DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/bin)
